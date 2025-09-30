@@ -1,97 +1,318 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<!-- # Movie Browser App
 
-# Getting Started
+## Setup
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+1. Clone repo
+2. Run `npm install`
+3. Create `.env` file with your TMDB_API_KEY
+4. Run `npx react-native run-android` or `npx react-native run-ios`
 
-## Step 1: Start Metro
+## Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Browse popular movies
+- Search movies by title
+- View movie details
+- Favorite movies
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Tech Stack
 
-```sh
-# Using npm
-npm start
+React Native, React Navigation, Context API, Axios, AsyncStorage -->
 
-# OR using Yarn
-yarn start
+## **CREATE: `README.md` (in root directory)**
+
+````markdown
+# 🎬 Movie Browser App
+
+A beautiful, modern React Native application that allows users to browse, search, and explore movies using The Movie Database (TMDB) API. Built with smooth animations, infinite scroll, and a sleek dark-themed UI.
+
+## 📸 Screenshots
+
+[Add your screenshots here]
+
+## ✨ Features
+
+### Core Features
+
+- **Browse Popular Movies**: View an endless list of popular movies with infinite scroll
+- **Search Functionality**: Real-time search with instant results as you type
+- **Movie Details**: Comprehensive movie information including:
+  - Full poster images
+  - Title and overview
+  - Release date and runtime
+  - Genres with styled chips
+  - Average user ratings
+- **Smooth Animations**: Beautiful entrance animations and transitions throughout the app
+- **Dark Theme UI**: Modern, eye-friendly dark interface with gradient overlays
+
+### Bonus Features Implemented
+
+- **Favorite Movies**: Save your favorite movies with persistent storage using AsyncStorage
+- **Infinite Scroll**: Seamlessly load more movies as you scroll
+- **Optimized Search**: Debounced search with clear button for better UX
+- **Responsive Design**: Adapts to different screen sizes
+
+## 🛠️ Tech Stack
+
+- **Framework**: React Native
+- **State Management**: React Context API + useReducer
+- **Navigation**: React Navigation (Stack Navigator)
+- **HTTP Client**: Axios
+- **Animations**: React Native Reanimated
+- **Storage**: AsyncStorage
+- **Environment Variables**: react-native-dotenv
+- **API**: The Movie Database (TMDB) API
+- **Testing**: Jest
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v14 or higher)
+- **npm** or **yarn**
+- **React Native CLI**
+- **Android Studio** (for Android) or **Xcode** (for iOS)
+- **JDK** (Java Development Kit) for Android
+- **TMDB API Key** (instructions below)
+
+## 🚀 Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/MovieBrowserApp.git
+cd MovieBrowserApp
+```
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
 ```
 
-## Step 2: Build and run your app
+### 3. Get Your TMDB API Key
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+1. Visit [The Movie Database](https://www.themoviedb.org/)
+2. Create a free account or log in
+3. Go to **Settings** → **API** → **Create** → **Developer**
+4. Fill out the form and accept the terms
+5. Copy your **API Key (v3 auth)**
+
+### 4. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```bash
+touch .env
+```
+
+Add the following content (replace with your actual API key):
+
+```env
+TMDB_API_KEY=your_api_key_here
+TMDB_BASE_URL=https://api.themoviedb.org/3
+TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
+```
+
+**⚠️ Important**: Never commit your `.env` file to version control!
+
+### 5. Install iOS Dependencies (iOS only)
+
+```bash
+cd ios
+pod install
+cd ..
+```
+
+## 📱 Running the App
 
 ### Android
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+npx react-native run-android
 ```
+
+**Note**: Make sure you have an Android emulator running or a physical device connected.
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npx react-native run-ios
 ```
 
-Then, and every time you update your native dependencies, run:
+**Note**: iOS development requires macOS and Xcode.
 
-```sh
-bundle exec pod install
+### Start Metro Bundler (if not started automatically)
+
+```bash
+npm start
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 🧪 Testing
 
-```sh
-# Using npm
-npm run ios
+Run the test suite:
 
-# OR using Yarn
-yarn ios
+```bash
+npm test
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Run tests in watch mode:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+npm test -- --watch
+```
 
-## Step 3: Modify your app
+Run tests with coverage:
 
-Now that you have successfully run the app, let's make changes!
+```bash
+npm test -- --coverage
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 📁 Project Structure
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```
+MovieBrowserApp/
+├── src/
+│   ├── components/
+│   │   └── MovieCard.js          # Reusable movie card component
+│   ├── context/
+│   │   └── MovieContext.js       # Global state management
+│   ├── screens/
+│   │   ├── HomeScreen.js         # Main screen with movie list
+│   │   └── DetailsScreen.js      # Movie details screen
+│   ├── services/
+│   │   └── tmdbApi.js            # API service layer
+│   └── utils/
+│       └── storage.js            # AsyncStorage utilities
+├── __tests__/
+│   └── movieReducer.test.js      # Unit tests
+├── .env                          # Environment variables (not in repo)
+├── App.js                        # Root component
+├── babel.config.js               # Babel configuration
+├── package.json                  # Dependencies
+└── README.md                     # This file
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🎨 Key Components
 
-## Congratulations! :tada:
+### HomeScreen
 
-You've successfully run and modified your React Native App. :partying_face:
+- Displays popular movies in a grid layout
+- Search bar with real-time filtering
+- Infinite scroll pagination
+- Loading states and empty state handling
 
-### Now what?
+### DetailsScreen
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Full movie information display
+- Favorite toggle functionality
+- Smooth animations on mount
+- Genre chips and metadata badges
 
-# Troubleshooting
+### MovieCard
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+- Animated card component
+- Poster image with gradient overlay
+- Rating and release year display
+- Optimized for grid layout
 
-# Learn More
+## 🔧 Configuration
 
-To learn more about React Native, take a look at the following resources:
+### Babel Configuration
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+The project uses `react-native-dotenv` for environment variables and `react-native-reanimated` for animations. Configuration is in `babel.config.js`.
+
+### Navigation
+
+React Navigation is configured with a Stack Navigator for seamless transitions between Home and Details screens.
+
+### State Management
+
+Uses React Context API with useReducer pattern for predictable state updates:
+
+- Movies list management
+- Search results
+- Favorites
+- Loading states
+
+## 🐛 Troubleshooting
+
+### Build Errors
+
+**Clear cache and rebuild:**
+
+```bash
+npm start -- --reset-cache
+cd android && ./gradlew clean
+cd ..
+npx react-native run-android
+```
+
+**iOS specific:**
+
+```bash
+cd ios
+pod deintegrate
+pod install
+cd ..
+npx react-native run-ios
+```
+
+### API Key Issues
+
+- Ensure your `.env` file is in the root directory
+- Verify your API key is correct
+- Restart Metro bundler after adding the API key
+
+### Metro Bundler Issues
+
+```bash
+npx react-native start --reset-cache
+```
+
+## 📚 API Documentation
+
+This app uses [The Movie Database (TMDB) API](https://developers.themoviedb.org/3).
+
+**Endpoints Used:**
+
+- `/movie/popular` - Get popular movies
+- `/search/movie` - Search movies
+- `/movie/{movie_id}` - Get movie details
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👤 Author
+
+**Samuel**
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@example.com
+
+## 🙏 Acknowledgments
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing the API
+- React Native community for amazing tools and libraries
+- Anthropic for technical interview opportunity
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Troubleshooting](#-troubleshooting) section
+2. Review [TMDB API Documentation](https://developers.themoviedb.org/3)
+3. Open an issue on GitHub
+
+---
