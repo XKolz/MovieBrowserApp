@@ -1,35 +1,15 @@
-<!-- # Movie Browser App
-
-## Setup
-
-1. Clone repo
-2. Run `npm install`
-3. Create `.env` file with your TMDB_API_KEY
-4. Run `npx react-native run-android` or `npx react-native run-ios`
-
-## Features
-
-- Browse popular movies
-- Search movies by title
-- View movie details
-- Favorite movies
-
-## Tech Stack
-
-React Native, React Navigation, Context API, Axios, AsyncStorage -->
-
 ## **CREATE: `README.md` (in root directory)**
 
 ````markdown
-# 🎬 Movie Browser App
+# Movie Browser App
 
 A beautiful, modern React Native application that allows users to browse, search, and explore movies using The Movie Database (TMDB) API. Built with smooth animations, infinite scroll, and a sleek dark-themed UI.
 
-## 📸 Screenshots
+## Screenshots
 
 [Add your screenshots here]
 
-## ✨ Features
+## Features
 
 ### Core Features
 
@@ -51,7 +31,7 @@ A beautiful, modern React Native application that allows users to browse, search
 - **Optimized Search**: Debounced search with clear button for better UX
 - **Responsive Design**: Adapts to different screen sizes
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React Native
 - **State Management**: React Context API + useReducer
@@ -63,7 +43,7 @@ A beautiful, modern React Native application that allows users to browse, search
 - **API**: The Movie Database (TMDB) API
 - **Testing**: Jest
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -74,7 +54,7 @@ Before you begin, ensure you have the following installed:
 - **JDK** (Java Development Kit) for Android
 - **TMDB API Key** (instructions below)
 
-## 🚀 Installation
+## Installation
 
 ### 1. Clone the Repository
 
@@ -114,7 +94,7 @@ TMDB_BASE_URL=https://api.themoviedb.org/3
 TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
 ```
 
-**⚠️ Important**: Never commit your `.env` file to version control!
+**Important**: Never commit your `.env` file to version control!
 
 ### 5. Install iOS Dependencies (iOS only)
 
@@ -148,7 +128,7 @@ npx react-native run-ios
 npm start
 ```
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 
@@ -168,32 +148,32 @@ Run tests with coverage:
 npm test -- --coverage
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MovieBrowserApp/
 ├── src/
 │   ├── components/
-│   │   └── MovieCard.js          # Reusable movie card component
+│   │   └── MovieCard.js
 │   ├── context/
-│   │   └── MovieContext.js       # Global state management
+│   │   └── MovieContext.js
 │   ├── screens/
-│   │   ├── HomeScreen.js         # Main screen with movie list
-│   │   └── DetailsScreen.js      # Movie details screen
+│   │   ├── HomeScreen.js
+│   │   └── DetailsScreen.js
 │   ├── services/
-│   │   └── tmdbApi.js            # API service layer
+│   │   └── tmdbApi.js
 │   └── utils/
-│       └── storage.js            # AsyncStorage utilities
+│       └── storage.js
 ├── __tests__/
-│   └── movieReducer.test.js      # Unit tests
-├── .env                          # Environment variables (not in repo)
-├── App.js                        # Root component
-├── babel.config.js               # Babel configuration
-├── package.json                  # Dependencies
-└── README.md                     # This file
+│   └── movieReducer.test.js
+├── .env
+├── App.tsx
+├── babel.config.js
+├── package.json
+└── README.md
 ```
 
-## 🎨 Key Components
+## Key Components
 
 ### HomeScreen
 
@@ -216,7 +196,7 @@ MovieBrowserApp/
 - Rating and release year display
 - Optimized for grid layout
 
-## 🔧 Configuration
+## Configuration
 
 ### Babel Configuration
 
@@ -235,7 +215,7 @@ Uses React Context API with useReducer pattern for predictable state updates:
 - Favorites
 - Loading states
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Build Errors
 
@@ -258,19 +238,13 @@ cd ..
 npx react-native run-ios
 ```
 
-### API Key Issues
-
-- Ensure your `.env` file is in the root directory
-- Verify your API key is correct
-- Restart Metro bundler after adding the API key
-
 ### Metro Bundler Issues
 
 ```bash
 npx react-native start --reset-cache
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 This app uses [The Movie Database (TMDB) API](https://developers.themoviedb.org/3).
 
@@ -279,40 +253,5 @@ This app uses [The Movie Database (TMDB) API](https://developers.themoviedb.org/
 - `/movie/popular` - Get popular movies
 - `/search/movie` - Search movies
 - `/movie/{movie_id}` - Get movie details
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👤 Author
-
-**Samuel**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing the API
-- React Native community for amazing tools and libraries
-- Anthropic for technical interview opportunity
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Troubleshooting](#-troubleshooting) section
-2. Review [TMDB API Documentation](https://developers.themoviedb.org/3)
-3. Open an issue on GitHub
 
 ---
